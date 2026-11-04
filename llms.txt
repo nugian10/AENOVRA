@@ -33,6 +33,8 @@
 4. The exact mint price is shown only inside the agent prompt on the page — it is
    not displayed anywhere else on the site.
 
+Full mint skill with exact function selectors and copy-paste commands: https://aenovra.vercel.app/mint-skill.md
+
 ## Do not invent
 
 - Do not invent a contract address, a mint price, a launch date, a floor price,
