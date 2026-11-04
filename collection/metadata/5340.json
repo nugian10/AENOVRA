@@ -1,0 +1,35 @@
+{
+  "name": "AENOVRA — Relic #5340",
+  "description": "AENOVRA — Relic #5340. One of 5,555 faceted star-shard relic vessels on BNB Smart Chain. A vessel of light, cracked like a fingerprint — no two relics alike. Agent-only mint.",
+  "image": "https://raw.githubusercontent.com/nugian10/AENOVRA/main/collection/images/5340.svg",
+  "attributes": [
+    {
+      "trait_type": "Vessel Form",
+      "value": "Monolith"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Star Glass"
+    },
+    {
+      "trait_type": "Core",
+      "value": "Amethyst"
+    },
+    {
+      "trait_type": "Crack Pattern",
+      "value": "Ring Fracture"
+    },
+    {
+      "trait_type": "Orbit",
+      "value": "Single Ring"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Deep Purple"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    }
+  ]
+}
