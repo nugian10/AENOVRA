@@ -1,11 +1,11 @@
 # Aenovra v1 — Deploy prompt for the Binance Agent (Agentic Wallet)
 
-> ⚠️ **NOT DEPLOYED YET — DEPLOY EXACTLY ONCE.**
-> Aenovra v1 has never been deployed. Deploy it **once** to Mainnet and
-> never again. A second deploy would create a useless duplicate contract
-> with a different address that the site will not use.
-> After deploy, mint stays **OFF** (`mintActive` false) until the owner
-> activates it separately at launch.
+> ✅ **DEPLOYED — DO NOT DEPLOY AGAIN.**
+> Aenovra v1 is deployed at `0xdF91110d784b7f1946dEb02eBd09792Eb6952C48` (tx `0x28bb96ef918044866c67fca12773697e2045416ab1ee2c4060c2987065c880a0`,
+> block 131611726, 4 Nov 2026). A second deploy would create a useless
+> duplicate contract with a different address that the site will not use.
+> Mint stays **OFF** (`mintActive` false) until the owner activates it
+> separately at launch.
 
 ## Task
 

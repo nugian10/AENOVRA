@@ -9,7 +9,7 @@
 
 ## Status (as of 2026-11-04)
 
-- NFT contract: NOT deployed yet. Mint is NOT open. Nothing can be minted today.
+- NFT contract: DEPLOYED at 0xdF91110d784b7f1946dEb02eBd09792Eb6952C48 (source verified on BscScan). Mint is NOT open yet. Nothing can be minted today.
 - Collection art and metadata: 5,555 unique relics, rarity Shard 3333 / Shattered 1333 / Split 555 / Core 250 / Prime 84.
 - Token $AENOVRA: coming soon. No contract address, no presale, no holder drop yet.
 - Marketplace: empty. No listings, no floor price, no volume yet.
