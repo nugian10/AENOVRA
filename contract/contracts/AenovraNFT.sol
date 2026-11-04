@@ -113,6 +113,17 @@ contract AenovraNFT is ERC721, Ownable, ReentrancyGuard {
     uint256 public constant MAX_SUPPLY = 5555;
     uint256 public constant MAX_PER_WALLET = 10;
 
+    /// @notice Expected deck hash (SHA-256 of the deck's compact JSON encoding,
+    /// as computed by the deck generator — see deckHash() docs).
+    /// Used for the DeckCommitted event at deploy time: computing
+    /// deckHash() from storage during construction costs ~6.3M gas,
+    /// so the event emits this constant instead. The deploy script
+    /// verifies the hash off-chain before deploying (and aborts on
+    /// mismatch), and the deckHash() view still computes it from
+    /// storage after deploy — the test suite checks both values match.
+    bytes32 public constant EXPECTED_DECK_HASH =
+        0xe83281f313b66ab004bb65d41ed51cf2de152aa9959031f95ce39acb36c74fa4;
+
     // Rarity tier codes.
     uint8 public constant RARITY_COMMON = 0;
     uint8 public constant RARITY_UNCOMMON = 1;
@@ -216,7 +227,12 @@ contract AenovraNFT is ERC721, Ownable, ReentrancyGuard {
         agentIdRegistry = agentIdRegistry_;
         _baseTokenURI = baseURI_;
         _deck = deck_;
-        emit DeckCommitted(deckHash());
+        // Emit the constant, NOT deckHash(): rebuilding the 11,111-byte
+        // JSON encoding from 5,555 storage slots during construction
+        // costs ~6.3M gas. The deploy script already verified the hash
+        // off-chain before deploying (aborts on mismatch), and the
+        // deckHash() view recomputes it from storage after deploy.
+        emit DeckCommitted(EXPECTED_DECK_HASH);
     }
 
     // ---------- supply / pricing (read-only, for UI + agents) ----------

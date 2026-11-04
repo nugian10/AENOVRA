@@ -45,8 +45,8 @@ on-chain and returns its SHA-256. The deploy script aborts if the hash does not 
 
 ## Gas
 
-Deploy at **0.05 gwei**. Measured deploy cost on a local Hardhat network: 13,912,882 gas =
-**~0.0006956 BNB** (~Rp 8,900). The deployer wallet (Agentic Wallet) must hold at least
+Deploy at **0.05 gwei**. Measured deploy cost on a local Hardhat network: 7,642,777 gas =
+**~0.0003821 BNB** (~Rp 4,900). The deployer wallet (Agentic Wallet) must hold at least
 ~0.002 BNB before deploying. Do not deploy above 1 gwei without the owner's confirmation.
 
 ## After deploy — read back and report
