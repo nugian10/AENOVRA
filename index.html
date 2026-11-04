@@ -568,7 +568,7 @@
       <div class="hero">
         <div class="hero-meta">
           <span>BNB Chain · Chain ID 56</span>
-          <span>ERC-721 · Not Deployed Yet</span>
+          <span>ERC-721 · Deployed</span>
           <span class="r">Mint: Agent Only</span>
         </div>
 
@@ -601,7 +601,7 @@
           </div>
           <div class="row" role="listitem">
             <span class="k">Minted</span>
-            <span class="v">—<small>contract not deployed yet</small></span>
+            <span class="v">0<small>mint not open yet</small></span>
           </div>
           <div class="row" role="listitem">
             <span class="k">Max per wallet</span>
@@ -825,9 +825,9 @@
           <p class="sec-index">04 / Mint</p>
           <h2>Mint not open yet</h2>
           <p class="sec-intro">
-            The Aenovra contract is not deployed yet — so nothing can be minted today, by anyone, in any way. What you can already do: prepare your agent and save the official prompt.
+            The Aenovra contract is deployed, but minting is not open yet — so nothing can be minted today, by anyone, in any way. What you can already do: prepare your agent and save the official prompt.
           </p>
-          <p class="mint-status">Status: Awaiting Contract Deployment</p>
+          <p class="mint-status">Status: Contract Deployed — Mint Not Open Yet</p>
 
           <div class="mint-cols">
             <div>
@@ -840,7 +840,7 @@
                 <div class="row"><span class="k">How to mint</span><span class="v">Agent only · Agent ID</span></div>
                 <div class="row"><span class="k">Mechanism</span><span class="v soft">One mint = one relic draw. The contract decides the result when the transaction succeeds.</span></div>
                 <div class="row"><span class="k">Mint price</span><span class="v soft">Not published on this page. Your agent reads it from the contract (currentPrice) and shows it before you approve.</span></div>
-                <div class="row"><span class="k">Contract address</span><span class="v">— not deployed yet</span></div>
+                <div class="row"><span class="k">Contract address</span><span class="v"><a href="https://bscscan.com/address/0xdF91110d784b7f1946dEb02eBd09792Eb6952C48">0xdF91110d784b7f1946dEb02eBd09792Eb6952C48</a></span></div>
               </div>
             </div>
 
@@ -887,7 +887,7 @@
               <pre id="agent-prompt">Mint Aenovra for me on BNB Chain (chain id 56).
 
 Rules you must follow:
-1. The official Aenovra contract address is: [ANNOUNCED ON THIS PAGE AT LAUNCH]
+1. The official Aenovra contract address is: 0xdF91110d784b7f1946dEb02eBd09792Eb6952C48
    Do not mint from any other address, even if it claims to be Aenovra.
 2. Read the mint price from the contract with currentPrice() before doing anything.
    The expected price is 0.0003 BNB per NFT — if currentPrice() shows anything
@@ -931,15 +931,12 @@ Quantity I want: [FILL IN — max 10]</pre>
           </ul>
         </div>
 
-        <div class="phase todo rv">
-          <span class="fno">02</span>
-          <div class="phase-top">
-            <h3>NFT Contract &amp; Verification</h3>
-            <span class="st">Not yet</span>
+        <div class="phase <h3>NFT Contract &amp; Verification</h3>
+            <span class="st">✓ Done</span>
           </div>
           <ul>
-            <li>Deploy the Aenovra contract on BNB Chain — 5.555 supply, 10 per wallet limit, a draw on every mint.</li>
-            <li>Verify the contract source code on BscScan.</li>
+            <li>Deployed the Aenovra contract on BNB Chain — 5.555 supply, 10 per wallet limit, a draw on every mint.</li>
+            <li>Verified the contract source code on BscScan.</li>
             <li>The official contract address is published on this page — the only place it is announced.</li>
           </ul>
         </div>
@@ -975,7 +972,7 @@ Quantity I want: [FILL IN — max 10]</pre>
         <p class="sec-index">06 / Marketplace</p>
         <h2>Nothing for sale yet</h2>
         <p class="sec-intro">
-          The Aenovra marketplace is empty because there is genuinely nothing to sell yet: the contract is not deployed, zero relics minted, zero listings.
+          The Aenovra marketplace is empty because there is genuinely nothing to sell yet: the contract is deployed, zero relics minted yet, zero listings.
         </p>
 
         <div class="market-empty rv">
