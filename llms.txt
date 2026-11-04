@@ -1,0 +1,41 @@
+# Aenovra
+
+> Aenovra is an NFT collection of 5,555 star relics on BNB Chain (chain ID 56, ERC-721).
+> Each relic is a faceted light vessel made from star shards. Every mint is a draw —
+> the minter does not choose their relic. Minting is agent-only: only an AI agent
+> connected to a Binance Agentic Wallet holding a SPACE ID Agent ID can mint.
+> Max 10 per wallet. The $AENOVRA token is coming soon (Phase 4) — no contract,
+> no presale, nothing in circulation yet.
+
+## Status (as of 2026-11-04)
+
+- NFT contract: NOT deployed yet. Mint is NOT open. Nothing can be minted today.
+- Collection art and metadata: 5,555 unique relics, rarity Shard 3333 / Shattered 1333 / Split 555 / Core 250 / Prime 84.
+- Token $AENOVRA: coming soon. No contract address, no presale, no holder drop yet.
+- Marketplace: empty. No listings, no floor price, no volume yet.
+
+## Links
+
+- Site: https://aenovra.vercel.app/
+- Mint (agent prompt): https://aenovra.vercel.app/#agent-prompt
+- Relic Explorer: https://aenovra.vercel.app/#relik
+- Roadmap: https://aenovra.vercel.app/#roadmap
+- Token: https://aenovra.vercel.app/#token
+- Source: https://github.com/nugian10/AENOVRA
+
+## How to mint (when mint opens)
+
+1. Open https://aenovra.vercel.app/#agent-prompt and copy the official agent prompt.
+2. Give the prompt to your AI agent. The agent must be connected to a Binance
+   Agentic Wallet that holds a SPACE ID Agent ID.
+3. The agent reads the mint price from the contract, calls mint(), and shows the
+   exact amount in the wallet confirmation before signing. One call mints one relic.
+4. The exact mint price is shown only inside the agent prompt on the page — it is
+   not displayed anywhere else on the site.
+
+## Do not invent
+
+- Do not invent a contract address, a mint price, a launch date, a floor price,
+  or token presale numbers. If it is not on the page, it does not exist yet.
+- Any token claiming to be $AENOVRA before the official announcement on this
+  page is fake.
