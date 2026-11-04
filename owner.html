@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Owner Aenovra &mdash; Mint Control</title>
+<meta name="description" content="Aenovra owner page: turn mint on/off and withdraw. Only the owner (My Wallet) can use it.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{--ink:#17130e;--paper:#fffdf6;--cream:#f6f1e6;--grey:#6f6a5e;--orange:#ff6a00;--purple:#3b1f5e;--green:#1d7a3d;--red:#c22f2f}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+  a{color:var(--purple)}
+  header.site{border-bottom:3px solid var(--ink);background:var(--paper);padding:14px 24px}
+  header.site a.brand{font-weight:900;font-size:20px;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+  header.site a.brand span{color:var(--orange)}
+  .deploy-wrap{max-width:760px;margin:0 auto;padding:32px 24px 64px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+  h1{font-size:34px;line-height:1.15;margin:8px 0}
+  .lede{font-size:17px}
+  .dbox{border:3px solid var(--ink);border-radius:20px;background:var(--paper);padding:20px 22px;margin:20px 0;box-shadow:5px 5px 0 var(--ink)}
+  .dbox h2{margin-top:0;font-size:20px}
+  .dwarn{background:#ffe9a8}
+  .ok{color:var(--green);font-weight:700}
+  .bad{color:var(--red);font-weight:700}
+  .mut{color:var(--grey)}
+  .mono{font-family:"Courier New",Courier,monospace;word-break:break-all;font-size:13px}
+  .btn{display:inline-block;border:3px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink);padding:12px 18px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:4px 4px 0 var(--ink);text-decoration:none;text-align:center}
+  .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn.primary{background:var(--orange);color:#fff}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  .check{display:flex;gap:12px;align-items:flex-start;margin:16px 0}
+  .check input{margin-top:4px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--purple)}
+  .check label{margin:0;font-size:15px}
+  table.dtable{width:100%;border-collapse:collapse;font-size:15px}
+  table.dtable td{padding:8px 4px;border-bottom:2px solid #e8dcc0;vertical-align:top}
+  table.dtable td:first-child{color:var(--grey);width:44%}
+  .hidden{display:none}
+  .bigstate{font-family:Arial Black,"Trebuchet MS",sans-serif;font-size:34px;line-height:1.1}
+  .bigstate.off{color:var(--red)}
+  .bigstate.on{color:var(--green)}
+  .badge{display:inline-block;min-width:26px;text-align:center;font-weight:900;border:3px solid var(--ink);border-radius:50%;padding:1px 6px;margin-right:8px}
+  .badge.ok{color:var(--green)}
+  .badge.bad{color:var(--red)}
+  .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .btnrow .btn{flex:1 1 200px}
+  .small{font-size:13px}
+  footer{border-top:3px solid var(--ink);padding:24px;text-align:center}
+</style>
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">AEN<span>O</span>VRA</a>
+</header>
+
+<main class="deploy-wrap">
+  <p><a href="index.html">&larr; Back to Aenovra</a></p>
+  <p class="eyebrow">Owner &mdash; Mint Control &middot; BNB Smart Chain Mainnet</p>
+  <h1>Owner Aenovra</h1>
+  <p class="lede">Turn mint on or off, and withdraw contract funds. This page is <b>only for the owner</b> (My Wallet) and is <b>not linked from the site menu</b> &mdash; only whoever holds this link can open it.</p>
+
+  <div class="dbox dwarn">
+    <h2>Read first</h2>
+    <p>This page <b>never</b> asks for a seed phrase, private key, password, or pairing code. If anything asks for those, stop &mdash; it is a scam.</p>
+    <p>Every action here uses <b>real BNB (Mainnet)</b> and <b>cannot be undone</b>. Turning mint on means <b>anyone</b> holding a SPACE ID Agent ID can mint &mdash; the contract is permissionless, max 10 per wallet.</p>
+  </div>
+
+  <div class="dbox">
+    <h2>Contract (locked)</h2>
+    <table class="dtable">
+      <tr><td>Contract</td><td>Aenovra (AENO), ERC-721, Solidity 0.8.24</td></tr>
+      <tr><td>Contract address</td><td class="mono">0xdF91110d784b7f1946dEb02eBd09792Eb6952C48</td></tr>
+      <tr><td>Deployed</td><td>4 Nov 2026, ~17:49 WIB &middot; block 131611726 &middot; <a href="https://bscscan.com/address/0xdF91110d784b7f1946dEb02eBd09792Eb6952C48" target="_blank" rel="noopener">BscScan</a> &middot; source verified</td></tr>
+      <tr><td>Owner</td><td class="mono">0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097 (My Wallet)</td></tr>
+      <tr><td>Revenue wallet</td><td class="mono">0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7 (Agentic Wallet)</td></tr>
+      <tr><td>Mint price (on-chain)</td><td>Flat 0.0003 BNB. The price can only be changed by the owner before the first mint &mdash; after that it is locked.</td></tr>
+      <tr><td>Mint</td><td>Agent-only: the caller must hold a SPACE ID Agent ID. Max 10 per wallet, 1 token per mint() call. Every mint is a draw.</td></tr>
+      <tr><td>Mint payments</td><td>The BNB paid is forwarded directly to the Agentic Wallet <b>inside</b> the mint() call &mdash; it never sits in the contract first. Contract balance stays 0 in normal operation.</td></tr>
+      <tr><td>Audit</td><td>No independent audit. Source verified on BscScan, 18/18 Hardhat tests passed &mdash; that is not an audit.</td></tr>
+    </table>
+  </div>
+
+  <div class="dbox">
+    <h2>1 &mdash; Connect the owner wallet</h2>
+    <p id="walletStatus">Wallet not connected.</p>
+    <button id="connectBtn" class="btn" type="button">Connect Wallet</button>
+    <p id="netStatus" class="mut"></p>
+    <button id="switchBtn" class="btn hidden" type="button">Switch to BNB Smart Chain Mainnet (56)</button>
+  </div>
+
+  <div class="dbox">
+    <h2>2 &mdash; Check these 3 things &mdash; all must be &#10003;</h2>
+    <p><span class="badge" id="badgeWallet">&hellip;</span><b>Wallet = My Wallet (owner)</b><br><span id="valWallet" class="mut">Not connected.</span></p>
+    <p><span class="badge" id="badgeChain">&hellip;</span><b>Network = BNB Smart Chain Mainnet (56)</b><br><span id="valChain" class="mut">Not connected.</span></p>
+    <p><span class="badge" id="badgeOwner">&hellip;</span><b>Contract owner = My Wallet</b><br><span id="valOwner" class="mut">Not read yet.</span></p>
+  </div>
+
+  <div class="dbox">
+    <h2>Contract status (read from the blockchain)</h2>
+    <p class="mut">Visible without connecting a wallet &mdash; read through a public RPC.</p>
+    <p><span id="stActiveBig" class="bigstate off">OFF</span></p>
+    <table class="dtable">
+      <tr><td>Mint active?</td><td id="stActive">&mdash;</td></tr>
+      <tr><td>Total minted</td><td id="stTotal">&mdash;</td></tr>
+      <tr><td>Current mint price</td><td id="stPrice">&mdash;</td></tr>
+      <tr><td>Base URI</td><td class="mono" id="stBaseUri">&mdash;</td></tr>
+      <tr><td>Revenue wallet</td><td class="mono" id="stRevenue">&mdash;</td></tr>
+      <tr><td>Owner (from contract)</td><td class="mono" id="stOwner">&mdash;</td></tr>
+      <tr><td>Contract balance (BNB)</td><td id="stBalance">&mdash;</td></tr>
+    </table>
+    <p><button id="refreshBtn" class="btn" type="button">Reload status</button></p>
+    <p id="statusNote" class="mut"></p>
+  </div>
+
+  <div class="dbox">
+    <h2>3 &mdash; Turn mint on / off</h2>
+    <p class="mut">The final cost is shown by your wallet before you approve. This call is small (tens of thousands of gas). Estimate: <b id="estToggle">&mdash;</b>.</p>
+    <div class="check">
+      <input type="checkbox" id="confirmBox">
+      <label for="confirmBox">I understand: mint will be <b>open to the public</b> (anyone holding a SPACE ID Agent ID can mint, max 10 per wallet), the price is a flat 0.0003 BNB, and mint payments go directly to the Agentic Wallet. This uses real BNB and cannot be undone.</label>
+    </div>
+    <div class="btnrow">
+      <button id="btnMintOn" class="btn primary" type="button" disabled>TURN MINT ON</button>
+      <button id="btnMintOff" class="btn" type="button" disabled>TURN MINT OFF</button>
+    </div>
+    <p id="toggleStatus" class="mut"></p>
+  </div>
+
+  <div class="dbox">
+    <h2>Withdraw to the Agentic Wallet</h2>
+    <p class="mut">Sends the <b>entire contract balance</b> to the revenue wallet (Agentic Wallet). Important: mint payments <b>do not enter the contract</b> &mdash; mint money is forwarded directly to the Agentic Wallet inside mint(). So in normal operation the contract balance is 0, and withdraw will <b>fail with NoFunds</b>. That is <b>normal, not a bug in this page</b> &mdash; withdraw only moves funds that entered the contract outside of mint().</p>
+    <div class="check">
+      <input type="checkbox" id="confirmWithdraw">
+      <label for="confirmWithdraw">I understand withdraw sends the entire contract balance to the Agentic Wallet <span class="mono">0x89c3&hellip;47B7</span>, and if the balance is 0 the transaction will fail (NoFunds) &mdash; that is normal.</label>
+    </div>
+    <button id="btnWithdraw" class="btn" type="button" disabled>Withdraw to Agentic Wallet</button>
+    <p class="mut">Estimated cost: <b id="estWithdraw">&mdash;</b>.</p>
+  </div>
+
+  <p id="status" role="status"></p>
+  <p id="error" role="alert" class="bad"></p>
+
+  <div class="dbox hidden" id="resultBox">
+    <h2>&#10003; Transaction succeeded!</h2>
+    <table class="dtable">
+      <tr><td>Action</td><td id="resAction">&mdash;</td></tr>
+      <tr><td>Transaction hash</td><td class="mono" id="resTx">&mdash;</td></tr>
+      <tr><td>Mint status now</td><td id="resDetail">&mdash;</td></tr>
+    </table>
+    <p style="margin-top:12px"><a id="resExplorer" target="_blank" rel="noopener">View on BscScan &rarr;</a></p>
+    <p class="mut">Send the transaction hash to Muse so the website can be updated to MINT IS LIVE.</p>
+    <button id="btnCopy" class="btn" type="button">Copy transaction hash</button>
+  </div>
+
+  <div class="dbox">
+    <h2>What you do NOT need to do</h2>
+    <ul class="mut">
+      <li>No Remix.</li>
+      <li>No QR scan / WalletConnect.</li>
+      <li>No paired AI agent.</li>
+      <li>No manual gas &mdash; the page uses the current network gas price.</li>
+    </ul>
+    <p class="small mut">This contract has not been independently audited. Owner actions use real BNB and cannot be undone.</p>
+  </div>
+</main>
+
+<footer class="small mut">
+  Aenovra &mdash; 5,555 star relics. Contract deployed 4 Nov 2026. No independent audit.
+</footer>
+
+<script src="ethers.umd.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var CONTRACT = '0xdF91110d784b7f1946dEb02eBd09792Eb6952C48';
+  var OWNER = '0x0262e8e5E4584D8AB840fD950a6E2E0A414d4097';
+  var REVENUE = '0x89c37649Ba3BAA9E1ce028612b7DE4e9c3a947B7';
+  var CHAIN_ID = 56, CHAIN_HEX = '0x38';
+  var RPC_URLS = ['https://bsc-dataseed.binance.org/', 'https://bsc.publicnode.com'];
+  // Minimal ABI — verified against the compiled artifact before publishing.
+  var ABI = [
+    'function owner() view returns (address)',
+    'function mintActive() view returns (bool)',
+    'function totalMinted() view returns (uint256)',
+    'function currentPrice() view returns (uint256)',
+    'function baseURI() view returns (string)',
+    'function revenueWallet() view returns (address)',
+    'function agentIdRegistry() view returns (address)',
+    'function setMintActive(bool active)',
+    'function withdraw()'
+  ];
+  var state = { provider: null, signer: null, account: '', chainOk: false, walletOk: false, ownerOk: false, status: null, busy: false };
+
+  function $(id) { return document.getElementById(id); }
+  function setBadge(id, ok) { var b = $(id); b.textContent = ok ? '\u2713' : '\u2715'; b.className = 'badge ' + (ok ? 'ok' : 'bad'); }
+  function showError(msg) { $('error').textContent = msg || ''; }
+  function showStatus(msg) { $('status').textContent = msg || ''; }
+  function setText(id, msg, cls) { var el = $(id); el.textContent = msg; if (cls) el.className = cls; }
+
+  // Gas price: do NOT rely on provider.getFeeData() alone. In-wallet
+  // browsers (e.g. Binance) return null for feeHistory/maxPriorityFee,
+  // so getFeeData throws BEFORE any transaction is sent (this broke the
+  // deploy page before). eth_gasPrice works on BSC and is reliable here.
+  async function getGasPriceWei() {
+    try {
+      var fee = await state.provider.getFeeData();
+      if (fee && fee.gasPrice) return fee.gasPrice;
+    } catch (e) { /* fall through to eth_gasPrice */ }
+    var gp = await state.provider.send('eth_gasPrice', []);
+    if (gp == null) throw new Error('Gas price not available from wallet (empty eth_gasPrice).');
+    return gp;
+  }
+
+  var GAS_FALLBACKS = { setMintActive: 60000n, withdraw: 100000n };
+  async function estimateGas(contract, fn, args) {
+    try {
+      var est = await contract[fn].estimateGas.apply(null, args);
+      return (est * 120n) / 100n;
+    } catch (e) {
+      return GAS_FALLBACKS[fn];
+    }
+  }
+  async function estimateCost(fn, args) {
+    try {
+      var price = await getGasPriceWei();
+      var contract = new window.ethers.Contract(CONTRACT, ABI, state.provider);
+      var gas = await estimateGas(contract, fn, args);
+      return '\u00B1 ' + window.ethers.formatEther(gas * price) + ' BNB (' + gas.toString() + ' gas, ' + (Number(price) / 1e9).toFixed(2) + ' gwei)';
+    } catch (e) { return '\u2014'; }
+  }
+
+  // Read-only provider (public RPC) — status is visible without a wallet.
+  var readProvider = null;
+  async function getReadProvider() {
+    if (readProvider) return readProvider;
+    for (var i = 0; i < RPC_URLS.length; i++) {
+      try {
+        var p = new window.ethers.JsonRpcProvider(RPC_URLS[i]);
+        await p.getBlockNumber();
+        readProvider = p;
+        return p;
+      } catch (e) { /* try the next RPC */ }
+    }
+    throw new Error('Public RPC cannot be reached. Check your connection and reload the page.');
+  }
+
+  function readContract(provider) {
+    return new window.ethers.Contract(CONTRACT, ABI, provider);
+  }
+
+  async function readStatus() {
+    if (!window.ethers) throw new Error('Ethers is not loaded. Check your connection and reload the page.');
+    var provider = state.provider || await getReadProvider();
+    var c = readContract(provider);
+    var results = await Promise.all([
+      c.owner(), c.mintActive(), c.totalMinted(), c.currentPrice(),
+      c.baseURI(), c.revenueWallet(), provider.getBalance(CONTRACT)
+    ]);
+    state.status = {
+      owner: results[0], active: results[1], total: results[2], price: results[3],
+      baseURI: results[4], revenue: results[5], balance: results[6]
+    };
+    var big = $('stActiveBig');
+    big.textContent = results[1] ? 'ON' : 'OFF';
+    big.className = 'bigstate ' + (results[1] ? 'on' : 'off');
+    setText('stActive', results[1] ? 'ON \u2014 mint is open' : 'OFF \u2014 mint is not open yet', results[1] ? 'ok' : 'bad');
+    setText('stTotal', results[2].toString() + ' / 5,555');
+    setText('stPrice', window.ethers.formatEther(results[3]) + ' BNB');
+    setText('stBaseUri', results[4]);
+    setText('stRevenue', results[5]);
+    setText('stOwner', results[0]);
+    setText('stBalance', window.ethers.formatEther(results[6]) + ' BNB' + (results[6] === 0n ? ' (normal \u2014 mint payments go directly to the Agentic Wallet)' : ''));
+    state.ownerOk = String(results[0]).toLowerCase() === OWNER.toLowerCase();
+    setBadge('badgeOwner', state.ownerOk);
+    setText('valOwner', state.ownerOk ? 'Contract owner = My Wallet \u2713' : 'Contract owner is NOT My Wallet: ' + results[0], state.ownerOk ? 'ok' : 'bad');
+    setText('statusNote', 'Status is read from BNB Smart Chain Mainnet (latest block) and reloads automatically after every successful transaction.');
+    refreshButtons();
+    return state.status;
+  }
+
+  function refreshButtons() {
+    var guards = state.walletOk && state.chainOk && state.ownerOk && !state.busy;
+    var confirmed = $('confirmBox').checked;
+    var active = state.status ? state.status.active : false;
+    $('btnMintOn').disabled = !(guards && confirmed && !active);
+    $('btnMintOff').disabled = !(guards && confirmed && active);
+    $('btnWithdraw').disabled = !(guards && $('confirmWithdraw').checked);
+  }
+
+  async function refreshChecks() {
+    try {
+      var net = await state.provider.getNetwork();
+      state.chainOk = Number(net.chainId) === CHAIN_ID;
+      state.walletOk = String(state.account).toLowerCase() === OWNER.toLowerCase();
+      setBadge('badgeWallet', state.walletOk);
+      setText('valWallet', state.walletOk ? 'My Wallet \u2713' : 'Connected wallet is NOT My Wallet: ' + state.account, state.walletOk ? 'ok' : 'bad');
+      setBadge('badgeChain', state.chainOk);
+      setText('valChain', state.chainOk ? 'BNB Smart Chain Mainnet (56) \u2713' : 'Wrong network: Chain ID ' + net.chainId + ' (must be 56).', state.chainOk ? 'ok' : 'bad');
+      $('switchBtn').classList.toggle('hidden', state.chainOk);
+      refreshButtons();
+    } catch (e) {
+      showError('Failed to check wallet/network: ' + (e && e.message || e));
+    }
+  }
+
+  async function connect() {
+    showError(''); showStatus('');
+    if (!window.ethers) { showError('Ethers is not loaded. Check your connection and reload the page.'); return; }
+    var eth = window.ethereum;
+    if (!eth) { showError('No wallet found. Open this page in your wallet app browser.'); return; }
+    try {
+      var accounts = await eth.request({ method: 'eth_requestAccounts' });
+      state.provider = new window.ethers.BrowserProvider(eth);
+      state.signer = await state.provider.getSigner();
+      state.account = String((accounts && accounts[0]) || await state.signer.getAddress());
+      await refreshChecks();
+      await readStatus();
+      setText('walletStatus', 'Connected: ' + state.account, state.walletOk ? 'ok' : 'bad');
+      setText('netStatus', state.chainOk ? 'Network: BNB Smart Chain Mainnet (56). Correct.' : 'Wrong network \u2014 switch to BNB Smart Chain Mainnet (56) first.', state.chainOk ? 'ok' : 'bad');
+      $('estToggle').textContent = await estimateCost('setMintActive', [true]);
+      $('estWithdraw').textContent = await estimateCost('withdraw', []);
+    } catch (e) {
+      showError('Failed to connect wallet: ' + (e && e.message || e));
+    }
+  }
+
+  async function sendOwnerTx(fn, args, label) {
+    if (state.busy) return;
+    showError(''); showStatus('Waiting for approval in your wallet\u2026');
+    state.busy = true; refreshButtons();
+    try {
+      if (!state.walletOk || !state.chainOk || !state.ownerOk) throw new Error('Wallet/network/owner checks have not passed. Do not send the transaction.');
+      var contract = new window.ethers.Contract(CONTRACT, ABI, state.signer);
+      // Explicit gas override: ethers must not call getFeeData()
+      // while preparing the transaction (see getGasPriceWei above).
+      var gasPrice = await getGasPriceWei();
+      var gasLimit = await estimateGas(contract, fn, args);
+      var tx = await contract[fn].apply(null, args.concat([{ gasPrice: gasPrice, gasLimit: gasLimit }]));
+      showStatus('Transaction sent: ' + tx.hash + '. Waiting for confirmation\u2026');
+      var receipt = await tx.wait();
+      if (!receipt || receipt.status !== 1) throw new Error('Transaction failed on-chain (status is not 1).');
+      var st = await readStatus();
+      var detail = 'Mint ' + (st.active ? 'ON' : 'OFF') + ' \u00B7 Total ' + st.total.toString() + '/5,555 \u00B7 Contract balance ' + window.ethers.formatEther(st.balance) + ' BNB';
+      $('resAction').textContent = label;
+      $('resTx').textContent = tx.hash;
+      $('resDetail').textContent = detail;
+      $('resExplorer').href = 'https://bscscan.com/tx/' + tx.hash;
+      $('resultBox').classList.remove('hidden');
+      showStatus('Done: ' + label + ' (hash ' + tx.hash + ').');
+    } catch (e) {
+      var msg = (e && e.code === 'ACTION_REJECTED') ? 'Transaction rejected in the wallet. Nothing changed on the contract.' : 'Failed: ' + (e && e.message || e) + ' If the transaction was already sent, check its hash on BscScan before retrying.';
+      showError(msg);
+    } finally {
+      state.busy = false; refreshButtons();
+    }
+  }
+
+  $('connectBtn').addEventListener('click', connect);
+  $('refreshBtn').addEventListener('click', async function () { try { await readStatus(); } catch (e) { showError(e.message || String(e)); } });
+  $('switchBtn').addEventListener('click', async function () {
+    try {
+      await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: CHAIN_HEX }] });
+      await refreshChecks(); await readStatus();
+    } catch (e) { showError('Failed to switch network: ' + (e && e.message || e)); }
+  });
+  $('confirmBox').addEventListener('change', refreshButtons);
+  $('confirmWithdraw').addEventListener('change', refreshButtons);
+  $('btnMintOn').addEventListener('click', function () { sendOwnerTx('setMintActive', [true], 'Mint turned on'); });
+  $('btnMintOff').addEventListener('click', function () { sendOwnerTx('setMintActive', [false], 'Mint turned off'); });
+  $('btnWithdraw').addEventListener('click', function () { sendOwnerTx('withdraw', [], 'Withdraw to Agentic Wallet'); });
+  $('btnCopy').addEventListener('click', async function () {
+    try { await navigator.clipboard.writeText($('resTx').textContent); showStatus('Transaction hash copied.'); }
+    catch (e) { showError('Copy failed. Copy it manually from the text above.'); }
+  });
+
+  if (window.ethereum && window.ethereum.on) {
+    window.ethereum.on('accountsChanged', function () { location.reload(); });
+    window.ethereum.on('chainChanged', function () { location.reload(); });
+  }
+
+  // Status loads immediately when the page opens — no wallet needed.
+  readStatus().catch(function (e) { setText('statusNote', 'Contract status could not be read yet: ' + (e && e.message ? e.message : e), 'bad'); });
+})();
+</script>
+</body>
+</html>
